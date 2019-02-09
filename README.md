@@ -7,7 +7,7 @@ Based on a heavily modified fastai setup.
 Build with: -
 
 ```
-docker build -t ck/ai .
+docker build -f dockerfile -t ck:ai .
 ```
 
 Run using: -

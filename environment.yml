@@ -93,16 +93,16 @@ dependencies:
 - widgetsnbextension
 - xz
 - zeromq
-- pytorch<0.4
+- pytorch
 - bcolz
 - prompt_toolkit
 - pytest
 - pip:
   - tensorflow-gpu
-  - torchvision>=0.1.9
+  - torchvision
   - opencv-python
   - isoweek
-  - pandas_summary==0.0.5
+  - pandas_summary
   - torchtext
   - graphviz
   - sklearn_pandas

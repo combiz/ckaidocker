@@ -1,5 +1,3 @@
-LABEL maintainer="Combiz Khozoie, Ph.D. FullName@hotmail.com"
-
 FROM nvidia/cuda:9.0-cudnn7-devel-ubuntu16.04
 
 LABEL com.nvidia.volumes.needed="nvidia_driver"
@@ -33,7 +31,7 @@ RUN mkdir /data
 WORKDIR /data
 
 COPY environment.yml environment.yml
-COPY /courses/ /data/courses/
+#COPY /courses/ /data/courses/
 
 RUN ls && /opt/conda/bin/conda env create
 RUN /opt/conda/bin/conda clean -ya
