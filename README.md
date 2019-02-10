@@ -23,6 +23,7 @@ Note: environment.yml is currently using the pip `- tf-nightly-gpu` instead of c
 
 ### Versions as of 02/2019
 `nvidia-smi`
+
 | app/package | version |
 | ----------- |:-------:|
 | nvidia-smi  | 415.27  |
