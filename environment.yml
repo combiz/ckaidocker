@@ -1,12 +1,11 @@
 name: ckai
 channels:
+- defaults
 - fastai
 - pytorch
-- defaults
 - peterjc123
 dependencies:
 - scipy
-- cuda90
 - cudnn
 - numpy
 - pillow
@@ -19,6 +18,7 @@ dependencies:
 - certifi
 - cffi
 - cycler
+- cudatoolkit=10.0.*
 - decorator
 - entrypoints
 - expat
@@ -85,7 +85,7 @@ dependencies:
 - testfixtures
 - testpath
 - tk
-- tornado<5
+- tornado
 - tqdm
 - traitlets
 - wcwidth
@@ -93,13 +93,12 @@ dependencies:
 - widgetsnbextension
 - xz
 - zeromq
-- pytorch
+- pytorch=1.0.*
+- torchvision=0.2.1
 - bcolz
 - prompt_toolkit
 - pytest
 - pip:
-  - tensorflow-gpu
-  - torchvision
   - opencv-python
   - isoweek
   - pandas_summary
