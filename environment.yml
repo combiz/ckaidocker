@@ -81,7 +81,7 @@ dependencies:
 - six
 - sqlite
 - statsmodels
-- tensorflow-gpu
+- tensorflow
 - testfixtures
 - testpath
 - tk
@@ -99,6 +99,7 @@ dependencies:
 - prompt_toolkit
 - pytest
 - pip:
+  - tf-nightly-gpu
   - opencv-python
   - isoweek
   - pandas_summary
