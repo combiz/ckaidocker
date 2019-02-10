@@ -53,9 +53,10 @@ CMD source ~/.bashrc
 
 # quick fix for environment.yml issues
 CMD echo ". /opt/conda/etc/profile.d/conda.sh" >> ~/.bashrc
-RUN source activate ckai && \
-    conda install --yes -c fragcolor cuda10.0 && \
-    conda install --yes pytorch torchvision cudatoolkit=10.0 -c pytorch
+#RUN source activate ckai && \
+#    conda install --yes -c fragcolor cuda10.0 && \
+#    conda install --yes pytorch torchvision cudatoolkit=10.0 -c pytorch
+RUN source activate ckai
 
 # Set the password for Jupyter Notebook
 RUN jupyter notebook --generate-config
