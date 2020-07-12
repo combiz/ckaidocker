@@ -1,6 +1,7 @@
 ### Docker image for AI
 
 #### GPU-enabled Jupyter Lab with Tensorflow/PyTorch/Keras/OpenCV
+#### TF 1.15 Version
 
 Build with: -
 
@@ -23,7 +24,7 @@ Or omit the --device parameter if webcam forwarding is not required.
 | ----------- |:----------:|
 | nvidia-smi  | 450.51.05  |
 | driver      | 450.51.05  |
-| CUDA        | 11.0       |
+| CUDA        | 10.0       |
 
 `nvcc --version`
 cuda compilation tools, release 10.2, V10.2.89
@@ -32,9 +33,20 @@ cuda compilation tools, release 10.2, V10.2.89
 
 | app/package | version |
 | ----------- |:-------:|
-| tensorflow  | 2.2.0   |
-| torch       | 1.5.1   |
+| tensorflow  | 1.15.0   |
+| torch       | 1.0.*   |
 | keras       | 2.3.1   |
 | cv2         | 4.3.0   |
 
 torch.cuda.is_available() True
+```
+import tensorflow as tf
+tf.test.is_gpu_available()
+```
+True
+
+```
+tf.test.is_built_with_cuda()
+```
+True
+

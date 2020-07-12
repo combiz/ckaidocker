@@ -18,7 +18,7 @@ dependencies:
 - certifi
 - cffi
 - cycler
-- cudatoolkit=10.2.*
+- cudatoolkit=10.0.*
 - decorator
 - entrypoints
 - expat
@@ -93,8 +93,8 @@ dependencies:
 - widgetsnbextension
 - xz
 - zeromq
-- pytorch=1.5.*
-- torchvision=0.6.1
+- pytorch=1.0.*
+- torchvision=0.2.1
 - bcolz
 - prompt_toolkit
 - pytest
@@ -112,4 +112,4 @@ dependencies:
   - plotnine
   - kaggle-cli
   - ipywidgets
-  - tensorflow_gpu==2.2.0
+  - tensorflow_gpu==1.15
