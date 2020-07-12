@@ -82,8 +82,6 @@ dependencies:
 - six
 - sqlite
 - statsmodels
-- tensorflow
-- tensorflow-gpu
 - testfixtures
 - testpath
 - tk
@@ -102,6 +100,7 @@ dependencies:
 - pytest
 - clang
 - cython
+- xgboost
 - pip:
   - opencv-python
   - isoweek
@@ -113,3 +112,4 @@ dependencies:
   - plotnine
   - kaggle-cli
   - ipywidgets
+  - tensorflow_gpu==2.2.0

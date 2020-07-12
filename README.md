@@ -32,7 +32,7 @@ cuda compilation tools, release 10.2, V10.2.89
 
 | app/package | version |
 | ----------- |:-------:|
-| tensorflow  | 1.13.1  |
+| tensorflow  | 2.2.0   |
 | torch       | 1.5.1   |
 | keras       | 2.3.1   |
 | cv2         | 4.3.0   |
