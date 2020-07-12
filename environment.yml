@@ -18,7 +18,7 @@ dependencies:
 - certifi
 - cffi
 - cycler
-- cudatoolkit=10.0.*
+- cudatoolkit=10.2.*
 - decorator
 - entrypoints
 - expat
@@ -42,6 +42,7 @@ dependencies:
 - libpng
 - libsodium
 - libxml2
+- libxslt
 - markupsafe
 - matplotlib
 - mistune
@@ -94,11 +95,13 @@ dependencies:
 - widgetsnbextension
 - xz
 - zeromq
-- pytorch=1.0.*
-- torchvision=0.2.1
+- pytorch=1.5.*
+- torchvision=0.6.1
 - bcolz
 - prompt_toolkit
 - pytest
+- clang
+- cython
 - pip:
   - opencv-python
   - isoweek

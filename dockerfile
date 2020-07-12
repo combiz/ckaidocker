@@ -1,4 +1,4 @@
-FROM nvidia/cuda:10.0-cudnn7-devel-ubuntu18.04
+FROM nvidia/cuda:10.2-cudnn7-devel-ubuntu18.04
 SHELL ["/bin/bash", "-c"]
 
 LABEL com.nvidia.volumes.needed="nvidia_driver"
@@ -18,6 +18,13 @@ RUN apt-get update && apt-get install -y --allow-downgrades --allow-change-held-
          libjpeg-dev \
 	 zip \
 	 unzip \
+         python3-dev \
+         python3-lxml \
+         libxml2 \
+         libxml2-dev \
+         libxslt-dev \
+         libyajl2 \
+         gcc \
          libpng-dev &&\
      rm -rf /var/lib/apt/lists/*
 
@@ -25,7 +32,7 @@ ENV LD_LIBRARY_PATH /usr/local/nvidia/lib:/usr/local/nvidia/lib64
 # keras still not officially compatible with 3.7 as of 02/2019
 ENV PYTHON_VERSION=3.6
 
-RUN curl -o ~/miniconda.sh -O  https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh  && \
+RUN curl -o ~/miniconda.sh -O  https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh  && \
      chmod +x ~/miniconda.sh && \
      ~/miniconda.sh -b -p /opt/conda && \
      rm ~/miniconda.sh && \
@@ -59,7 +66,8 @@ CMD echo ". /opt/conda/etc/profile.d/conda.sh" >> ~/.bashrc
 RUN source activate ckai
 
 # Set the password for Jupyter Notebook
+# run 'from notebook.auth import passwd; passwd()' in colab
 RUN jupyter notebook --generate-config
-RUN echo "c.NotebookApp.password='sha1:a9bb67abddaa:0a644122b5f4522258307d6d612c212bd3915a69'">>/root/.jupyter/jupyter_notebook_config.py
+RUN echo "c.NotebookApp.password='sha1:8f18384f7144:962790076495570dc4a234010a4340c4c659785c'">>/root/.jupyter/jupyter_notebook_config.py
 
 CMD ["jupyter", "lab", "--ip=0.0.0.0", "--no-browser", "--allow-root"]

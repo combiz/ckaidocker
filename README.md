@@ -1,45 +1,40 @@
 ### Docker image for AI
 
-#### GPU-enabled and includes all the standard ML/DL stuff plus OpenCV
-
-Based on a heavily modified fastai setup.
+#### GPU-enabled Jupyter Lab with Tensorflow/PyTorch/Keras/OpenCV
 
 Build with: -
 
 ```
-docker build -f dockerfile -t ck:ai .
+docker build -f dockerfile -t ckai .
 ```
 
 Run using: -
 
 ```
-docker run --runtime=nvidia --device=/dev/video0:/dev/video0 --restart unless-stopped -d -v $HOME:/data/home -p 8888:8888 ck/ai:latest
+docker run --gpus all --device=/dev/video0:/dev/video0 --restart unless-stopped -d -v $HOME:/data/home -p 8888:8888 ckai:latest
 ```
 
 Or omit the --device parameter if webcam forwarding is not required.
 
-Note: environment.yml is currently using the pip `- tf-nightly-gpu` instead of conda `tensorflow-gpu` .  When TF2 is released conda10 will be officially supported.
-
-
-### Versions as of 02/2019
+### Versions as of 07/2020
 `nvidia-smi`
 
-| app/package | version |
-| ----------- |:-------:|
-| nvidia-smi  | 415.27  |
-| driver      | 415.27  |
-| CUDA        | 10.0    |
+| app/package | version    |
+| ----------- |:----------:|
+| nvidia-smi  | 450.51.05  |
+| driver      | 450.51.05  |
+| CUDA        | 11.0       |
 
 `nvcc --version`
-cuda compilation tools, release 10.0, V10.0.130
+cuda compilation tools, release 10.2, V10.2.89
 
 `python package.__version__`
 
 | app/package | version |
 | ----------- |:-------:|
-| tensorflow  | 1.13.0-dev20190208  |
-| torch       | 1.0.1.post2  |
-| keras       | 2.2.4    |
-| cv2         | 4.0.0    |
+| tensorflow  | 1.13.1  |
+| torch       | 1.5.1   |
+| keras       | 2.3.1   |
+| cv2         | 4.3.0   |
 
 torch.cuda.is_available() True
